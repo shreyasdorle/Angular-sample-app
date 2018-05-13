@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<title>Sample App</title>
+		<!-- injector:css -->
+		<link rel="stylesheet" href="assets/css/main.min.css"/>
+		<!-- endinjector -->
+	</head>
+	<body>
+		<header>
+			<ul>
+				<li><a href="#/view1">view 1</a></li>
+				<li><a href="#/view2">view 2</a></li>
+			</ul>
+		</header>
+		<div ng-view></div>
+
+	</div>
+		<!-- injector:js -->
+		<script rel="javascript" src="assets/js/jquery/jquery-3.3.1.min.js"></script>
+		<script rel="javascript" src="assets/js/angular-1.5.9/angular.min.js"></script>
+		<script rel="javascript" src="assets/js/angular-1.5.9/angular-route.min.js"></script>
+		<script rel="javascript" src="app/app.js"></script>
+		<script rel="javascript" src="app/controllers/sampleController.js"></script>
+		<script rel="javascript" src="app/services/sampleService.js"></script>
+		<!-- endinjector -->
+	</body>
+</html>
