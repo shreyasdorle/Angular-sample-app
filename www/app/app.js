@@ -4,14 +4,14 @@ var app = angular.module('app' , ['ngRoute']);
 
 app.config (['$routeProvider', function($routeProvider) {
 	$routeProvider.
-		when ('/view1', {
-			templateUrl: 'app/templates/view1.html',
+		when ('/inventory', {
+			templateUrl: 'app/templates/inventory.html',
 			controller: 'sampleController'
 			}
 		).
-		when ('/view2', {
-			templateUrl: 'app/templates/view2.html',
+		when ('/shoppingcart', {
+			templateUrl: 'app/templates/shoppingCartManager.html',
 			controller: 'sampleController'
 			}
-		).otherwise({ redirectTo: '/view1' });
+		).otherwise({ redirectTo: '/' });
 }]);

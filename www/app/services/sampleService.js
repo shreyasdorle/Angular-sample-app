@@ -1,45 +1,41 @@
 'use strict';
 
 app.service('sampleService', function ($http, $q) {
-    this.getCustomers = function () {
-        return customers;
-    };
-
-    this.getCustomerFromApi = function(){
+    this.getInventory = function(){
         var deferred = $q.defer();
         $http({
             method: 'GET',
-            url: 'http://jsonplaceholder.typicode.com/posts'
+            url: 'http://demo7687977.mockable.io/inventory'
         })
         .success(deferred.resolve)
         .error(deferred.resolve);
         return deferred.promise;
     };
-
-    this.postCustomer = function(data){
-        var deferred = $q.defer();
-        $http({
-            method: 'POST',
-            url: 'http://jsonplaceholder.typicode.com/posts',
-            data: {
-                'id': data.custId,
-                'title': data.custTitle
+    this.getProductDetails = function(data, id){
+        for (var i = 0; i < data.length; i++){
+            if (data[i].id && data[i].id === id) { 
+                return data[i];
             }
-        })
-        .success(deferred.resolve)
-        .error(deferred.resolve);
-        return deferred.promise;
+        }
     };
 
-    var customers = [
-    	{
-    		'id': 1,
-    		'name': 'Shreyas'
-    	},
-    	{
-    		'id': 2,
-    		'name': 'Champ'
-    	}
-    ];
+    this.isProductInCart = function(data, id){
+        for (var i = 0; i < data.length; i++){
+            if (data[i].id && data[i].id === id) { 
+                return true;
+            }
+        }
+        return false;
+    };
+
+    this.removeFromCartUsingId = function(data, id){
+        for (var i = 0; i < data.length; i++){
+            if (data[i].id && data[i].id === id) { 
+                data.splice(i, 1);
+                break;
+            }
+        }
+        return data;
+    };
 
 });

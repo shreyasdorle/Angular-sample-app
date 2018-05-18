@@ -1,21 +1,44 @@
-header {
-  background-color: red;
-  height: 50px; }
-  header ul {
-    list-style: none; }
-    header ul li {
-      padding: 10px;
-      float: left; }
-      header ul li a {
-        color: #000;
-        text-decoration: none; }
-        header ul li a:hover {
-          text-decoration: underline; }
+.square {
+  position: relative;
+  height: 50px;
+  width: 50px;
+  background-color: blue;
+  bottom: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 25px solid #FFF; }
 
-div {
-  background-color: green; }
+.main-nav, .sub-nav {
+  background-color: blue; }
+  .main-nav ul, .sub-nav ul {
+    height: 40px;
+    width: 600px;
+    margin: auto;
+    padding: 0;
+    list-style: none;
+    text-align: center; }
+    .main-nav ul li, .sub-nav ul li {
+      height: 40px;
+      width: 20%;
+      line-height: 40px;
+      float: left;
+      font-size: 16px;
+      color: #FFF;
+      cursor: pointer; }
+      .main-nav ul li:hover, .sub-nav ul li:hover {
+        text-decoration: underline; }
 
-p {
-  font-size: 14px; }
+.sub-nav {
+  display: none; }
+
+.main-nav li:hover .sub-nav {
+  display: block; }
+
+@media screen and (max-width: 599px) {
+  .main-nav ul {
+    height: 160px;
+    width: 100%; }
+    .main-nav ul li {
+      width: 100%; } }
 
 /*# sourceMappingURL=main.min.css.map */

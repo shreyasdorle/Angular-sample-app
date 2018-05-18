@@ -1,0 +1,23 @@
+<table>
+	<tr>
+		<th>ID</th>
+		<th>Name</th>
+		<th>Category</th>
+		<th>Price</th>
+		<th>Inventory</th>
+		<th></th>
+		<th></th>
+	</tr>
+	<tr ng-repeat="product in data | orderBy:'price'">
+		<td>{{product.id}}</td>
+		<td>{{product.name}}</td>
+		<td>{{product.category}}</td>
+		<td>$ {{product.price}}</td>
+		<td>{{product.inventory}}</td>
+		<td><button ng-click="addToCart(product.id)"> + </button></td>
+		<td><button ng-click="removeFromCart(product.id)"> - </button></td>
+	</tr>
+</table>
+
+<h3>Shopping Cart</h3>
+<div>{{cart}}</div>

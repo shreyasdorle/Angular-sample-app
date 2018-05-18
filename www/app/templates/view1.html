@@ -1,7 +1,0 @@
-<h1> This is VIEW 1 </h1>
-
-Filter: <input ng-model='searchInput' />
-
-<div ng-repeat="cust in customers | orderBy:'name' | filter:searchInput">
-	{{cust.id + ' - ' + cust.name }}
-</div>
